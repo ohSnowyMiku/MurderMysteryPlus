@@ -14,6 +14,10 @@ public class CheckPlayerGameTypeUtil {
             return false;
         }
 
+        if (locraw.getServerId() == null || locraw.getServerId().contains("lobby")) {
+            return false;
+        }
+
         return locraw.getGameType() == LocrawInfo.GameType.MURDER_MYSTERY;
     }
 
