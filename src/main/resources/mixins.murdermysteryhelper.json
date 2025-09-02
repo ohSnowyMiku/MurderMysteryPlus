@@ -1,0 +1,16 @@
+{
+  "compatibilityLevel": "JAVA_8",
+  "minVersion": "0.7",
+  "package": "ohSnowyMiku.MurderMysteryHelper.mixin",
+  "refmap": "mixins.murdermysteryhelper.refmap.json",
+  "injectors": {
+    "maxShiftBy": 5
+  },
+  "client": [
+    "RenderEntityItemMixin_GoldIngotOverlay"
+  ],
+  "verbose": true,
+  "mixins": [
+    "MixinScoreboard"
+  ]
+}
