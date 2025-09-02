@@ -102,7 +102,10 @@ public class ArmorStandNameTagHider {
             "拉下拉杆祈祷神明",
             "点击敬奉祭品给神明",
             "跳！",
-            "JUMP!"
+            "JUMP!",
+            "Tickets",
+            "请配合检票"
+
     );
     private static final List<String> SPECIAL_WORDS = Arrays.asList(
             "Platform Level",
@@ -146,6 +149,10 @@ public class ArmorStandNameTagHider {
 
         for (String k : KEYWORDS) {
             if (name.contains(k)) return 1;
+        }
+
+        if (name.contains(".") && name.contains("分")) {
+            return 1;
         }
 
         for (String s : SPECIAL_WORDS) {
