@@ -44,7 +44,4 @@ jobs:
         run: chmod +x ./gradlew
 
       - name: Build
-        run: ./gradlew build --no-daemon
-
-      - name: Build with Gradle
         run: ./gradlew build --stacktrace --info
