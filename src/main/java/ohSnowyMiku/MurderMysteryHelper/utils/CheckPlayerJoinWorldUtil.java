@@ -1,16 +1,5 @@
 package ohSnowyMiku.MurderMysteryHelper.utils;
 
-import net.minecraft.client.Minecraft;
-import net.minecraftforge.event.entity.EntityJoinWorldEvent;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.fml.common.gameevent.TickEvent;
-import ohSnowyMiku.MurderMysteryHelper.config.MurderMysteryHelperConfig;
-import ohSnowyMiku.MurderMysteryHelper.event.events.HiddenMurderTitleTipEvent;
-import ohSnowyMiku.MurderMysteryHelper.event.events.MapEventHud.NewSecretPassageHudEvent;
-import ohSnowyMiku.MurderMysteryHelper.event.events.tablistrole.ChatPlayerRoleListener;
-
-import static ohSnowyMiku.MurderMysteryHelper.utils.CheckPlayerGameMapNameUtil.checkPlayerGameMapName;
-
 public class CheckPlayerJoinWorldUtil {
 
     /*private int delayTicks = -1;

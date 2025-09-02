@@ -9,7 +9,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import ohSnowyMiku.MurderMysteryHelper.command.ExampleCommand;
 import ohSnowyMiku.MurderMysteryHelper.config.MurderMysteryHelperConfig;
 import ohSnowyMiku.MurderMysteryHelper.event.events.*;
-import ohSnowyMiku.MurderMysteryHelper.event.events.MapEventHud.NewSecretPassageHudEvent;
+import ohSnowyMiku.MurderMysteryHelper.event.events.MapEventHud.SecretPassageHudEvent;
 import ohSnowyMiku.MurderMysteryHelper.event.events.bowprotector.BowProtector;
 import ohSnowyMiku.MurderMysteryHelper.event.events.nametaghider.ArmorStandNameTagHider;
 import ohSnowyMiku.MurderMysteryHelper.event.events.tablistrole.ChatPlayerRoleListener;
@@ -45,7 +45,7 @@ public class MurderMysteryHelper {
         CommandManager.INSTANCE.registerCommand(new ExampleCommand());
 
         //EventManager.INSTANCE.register(new SecretPassageHudEvent());
-        EventManager.INSTANCE.register(new NewSecretPassageHudEvent());
+        EventManager.INSTANCE.register(new SecretPassageHudEvent());
         //EventManager.INSTANCE.register(new SecretPassageTitleEvent());
         //EventManager.INSTANCE.register(new PlayerJoinGameUtil());
         EventManager.INSTANCE.register(new CheckPlayerJoinGameUtil());

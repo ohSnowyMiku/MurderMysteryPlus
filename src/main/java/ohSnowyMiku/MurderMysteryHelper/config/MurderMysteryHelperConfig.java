@@ -7,7 +7,6 @@ import cc.polyfrost.oneconfig.config.Config;
 import cc.polyfrost.oneconfig.config.data.Mod;
 import cc.polyfrost.oneconfig.config.data.ModType;
 import cc.polyfrost.oneconfig.config.data.OptionSize;
-import ohSnowyMiku.MurderMysteryHelper.hud.NewSecretPassageHud;
 import ohSnowyMiku.MurderMysteryHelper.hud.SecretPassageHud;
 import ohSnowyMiku.MurderMysteryHelper.hud.WeaponCooldownHud;
 
@@ -114,7 +113,7 @@ public class MurderMysteryHelperConfig extends Config {
             name = "Secret Passage Status HUD",
             category = "HUD"
     )
-    public NewSecretPassageHud secretPassageHud = new NewSecretPassageHud();
+    public SecretPassageHud secretPassageHud = new SecretPassageHud();
 
 
     @HUD(
