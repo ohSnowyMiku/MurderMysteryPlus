@@ -45,3 +45,7 @@ jobs:
 
       - name: Build
         run: ./gradlew build --stacktrace --info
+
+  env:
+    JAVA_HOME: /usr/lib/jvm/temurin-17-jdk-amd64
+    # 不要再设置 Windows 路径的 org.gradle.java.home
