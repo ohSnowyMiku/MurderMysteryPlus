@@ -4,6 +4,7 @@ import cc.polyfrost.oneconfig.events.EventManager;
 import cc.polyfrost.oneconfig.events.event.InitializationEvent;
 import cc.polyfrost.oneconfig.utils.commands.CommandManager;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import ohSnowyMiku.MurderMysteryHelper.command.ExampleCommand;
@@ -17,6 +18,10 @@ import ohSnowyMiku.MurderMysteryHelper.event.events.tablistrole.TabListEventHand
 import ohSnowyMiku.MurderMysteryHelper.event.events.weaponcooldownhud.ChatHandler;
 import ohSnowyMiku.MurderMysteryHelper.event.events.weaponcooldownhud.ScoreBarListener;
 import ohSnowyMiku.MurderMysteryHelper.event.events.weaponcooldownhud.TickHandler;
+
+
+import ohSnowyMiku.MurderMysteryHelper.others.font.ChatFixHandler;
+import ohSnowyMiku.MurderMysteryHelper.others.resourcepack.hook;
 import ohSnowyMiku.MurderMysteryHelper.utils.CheckPlayerJoinGameUtil;
 import ohSnowyMiku.MurderMysteryHelper.utils.SimpleDelayedChatUtil;
 
@@ -63,12 +68,14 @@ public class MurderMysteryHelper {
         MinecraftForge.EVENT_BUS.register(new ChatPlayerRoleListener());
         MinecraftForge.EVENT_BUS.register(new SimpleDelayedChatUtil());
         MinecraftForge.EVENT_BUS.register(new ArmorStandNameTagHider());
+        MinecraftForge.EVENT_BUS.register(new ChatFixHandler());
         //MinecraftForge.EVENT_BUS.register(new CheckPlayerJoinWorldUtil());
         //MinecraftForge.EVENT_BUS.register(new BetterNametag());
 
 
-
-
-
+        if (FMLCommonHandler.instance().getSide().isClient()) {
+            // 保证在客户端主线程、资源仓库准备好之后执行
+            net.minecraft.client.Minecraft.getMinecraft().addScheduledTask(hook::applyOnce);
+        }
     }
 }

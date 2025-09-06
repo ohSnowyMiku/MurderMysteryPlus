@@ -44,7 +44,7 @@ public class ArmorStandNameTagHider {
             "神秘药水",
             "Mystery Potion",
             "右键点击座位即可乘坐",
-            "Right-Click seats to ride",
+            "Right-click seats to ride",
             "Teleporter",
             "传送器",
             "开启陷阱",
@@ -104,7 +104,12 @@ public class ArmorStandNameTagHider {
             "跳！",
             "JUMP!",
             "Tickets",
-            "请配合检票"
+            "请配合检票",
+            "打我！",
+            "Punch me!",
+            "Don't hit me!",
+            "痛！",
+            "Ouch!"
 
     );
     private static final List<String> SPECIAL_WORDS = Arrays.asList(
