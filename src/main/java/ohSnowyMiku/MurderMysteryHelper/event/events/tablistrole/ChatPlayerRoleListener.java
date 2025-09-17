@@ -120,7 +120,7 @@ public class ChatPlayerRoleListener {
 
 
 //接收消息getFormattedText:§r§f                    §r§a神明告诉你Miku_AveMujica§r§a是侦探！§r
-//[接收消息getUnformattedText:                    神明告诉你Miku_AveMujica是侦探！
+//接收消息getUnformattedText:                    神明告诉你Miku_AveMujica是侦探！
 //神明告诉你ohSnowyMiku是侦探！
 //神明告诉你Miku_AveMujica是侦探！
 //Kali shows you that ohSnowyMiku is the Detective!
@@ -141,8 +141,8 @@ public class ChatPlayerRoleListener {
 //[17:41:05] [Client thread/INFO] [STDOUT/]: [ohSnowyMiku.MurderMysteryHelper.event.events.tablistrole.ChatRoleListener:getCleanMessage:120]: 已经清除空格和颜色符 :You see that [MVP++] Miku_AveMujica has murderous
 //[17:41:05] [Client thread/INFO] [STDOUT/]: [ohSnowyMiku.MurderMysteryHelper.event.events.tablistrole.ChatRoleListener:getPlayerName:127]: 尝试获取id
 
-//[18:04:49] [Client thread/INFO] [STDOUT/]: [ohSnowyMiku.MurderMysteryHelper.event.events.MessageEvent:messageReceived:18]: 接收消息getFormattedText:§r§f       §r§aYou see that §r§6[MVP§r§0++§r§6] Miku_AveMujica§r§f §r§ahas murderous§r
-//[18:04:49] [Client thread/INFO] [STDOUT/]: [ohSnowyMiku.MurderMysteryHelper.event.events.MessageEvent:messageReceived:19]: 接收消息getUnformattedText:       You see that [MVP++] Miku_AveMujica has murderous
+//[18:04:49] [Client thread/INFO] [STDOUT/]: [ohSnowyMiku.MurderMysteryHelper.event.events.MessageEvent:getChatText:18]: 接收消息getFormattedText:§r§f       §r§aYou see that §r§6[MVP§r§0++§r§6] Miku_AveMujica§r§f §r§ahas murderous§r
+//[18:04:49] [Client thread/INFO] [STDOUT/]: [ohSnowyMiku.MurderMysteryHelper.event.events.MessageEvent:getChatText:19]: 接收消息getUnformattedText:       You see that [MVP++] Miku_AveMujica has murderous
 //[18:04:49] [Client thread/INFO] [STDOUT/]: [ohSnowyMiku.MurderMysteryHelper.event.events.tablistrole.ChatRoleListener:checkPlayerRole:109]: 已经匹配到正确内容
 //[18:04:49] [Client thread/INFO] [STDOUT/]: [ohSnowyMiku.MurderMysteryHelper.event.events.tablistrole.ChatRoleListener:getCleanMessage:120]: 已经清除空格和颜色符以及rank :You see that [MVP++] Miku_AveMujica has murderous
 //[18:04:49] [Client thread/INFO] [STDOUT/]: [ohSnowyMiku.MurderMysteryHelper.event.events.tablistrole.ChatRoleListener:getPlayerName:127]: 尝试获取id

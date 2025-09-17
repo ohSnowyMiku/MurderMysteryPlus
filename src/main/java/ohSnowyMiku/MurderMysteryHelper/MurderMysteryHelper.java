@@ -9,7 +9,10 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import ohSnowyMiku.MurderMysteryHelper.command.ExampleCommand;
 import ohSnowyMiku.MurderMysteryHelper.config.MurderMysteryHelperConfig;
-import ohSnowyMiku.MurderMysteryHelper.event.events.*;
+import ohSnowyMiku.MurderMysteryHelper.event.events.ArmorStandHandlerEvent;
+import ohSnowyMiku.MurderMysteryHelper.event.events.BowHideHandler;
+import ohSnowyMiku.MurderMysteryHelper.event.events.HiddenKaliSpamEvent;
+import ohSnowyMiku.MurderMysteryHelper.event.events.HiddenMurderTitleTipEvent;
 import ohSnowyMiku.MurderMysteryHelper.event.events.MapEventHud.SecretPassageHudEvent;
 import ohSnowyMiku.MurderMysteryHelper.event.events.bowprotector.BowProtector;
 import ohSnowyMiku.MurderMysteryHelper.event.events.nametaghider.ArmorStandNameTagHider;
@@ -18,12 +21,9 @@ import ohSnowyMiku.MurderMysteryHelper.event.events.tablistrole.TabListEventHand
 import ohSnowyMiku.MurderMysteryHelper.event.events.weaponcooldownhud.ChatHandler;
 import ohSnowyMiku.MurderMysteryHelper.event.events.weaponcooldownhud.ScoreBarListener;
 import ohSnowyMiku.MurderMysteryHelper.event.events.weaponcooldownhud.TickHandler;
-
-
 import ohSnowyMiku.MurderMysteryHelper.others.font.ChatFixHandler;
 import ohSnowyMiku.MurderMysteryHelper.others.resourcepack.hook;
-import ohSnowyMiku.MurderMysteryHelper.utils.CheckPlayerJoinGameUtil;
-import ohSnowyMiku.MurderMysteryHelper.utils.SimpleDelayedChatUtil;
+import ohSnowyMiku.MurderMysteryHelper.utils.*;
 
 /**
  * The entrypoint of the Example Mod that initializes it.
@@ -57,6 +57,9 @@ public class MurderMysteryHelper {
         EventManager.INSTANCE.register(new HiddenMurderTitleTipEvent());
         EventManager.INSTANCE.register(new BowProtector());
 
+        //MinecraftForge.EVENT_BUS.register(new GetChatMessageUtil());
+        //MinecraftForge.EVENT_BUS.register(Get1ChatMessageUtil.class);
+        MinecraftForge.EVENT_BUS.register(new ChatUtil());
         MinecraftForge.EVENT_BUS.register(new HiddenKaliSpamEvent());
         MinecraftForge.EVENT_BUS.register(new BowHideHandler());
         MinecraftForge.EVENT_BUS.register(new ScoreBarListener());
@@ -64,11 +67,11 @@ public class MurderMysteryHelper {
         MinecraftForge.EVENT_BUS.register(TickHandler.INSTANCE);
         MinecraftForge.EVENT_BUS.register(new ArmorStandHandlerEvent());
         MinecraftForge.EVENT_BUS.register(new TabListEventHandler());
-        //MinecraftForge.EVENT_BUS.register(new MessageEvent());
         MinecraftForge.EVENT_BUS.register(new ChatPlayerRoleListener());
         MinecraftForge.EVENT_BUS.register(new SimpleDelayedChatUtil());
         MinecraftForge.EVENT_BUS.register(new ArmorStandNameTagHider());
         MinecraftForge.EVENT_BUS.register(new ChatFixHandler());
+        //MinecraftForge.EVENT_BUS.register(new SpawnProtector());
         //MinecraftForge.EVENT_BUS.register(new CheckPlayerJoinWorldUtil());
         //MinecraftForge.EVENT_BUS.register(new BetterNametag());
 

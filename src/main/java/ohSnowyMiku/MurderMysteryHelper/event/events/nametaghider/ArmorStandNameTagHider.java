@@ -109,7 +109,10 @@ public class ArmorStandNameTagHider {
             "Punch me!",
             "Don't hit me!",
             "痛！",
-            "Ouch!"
+            "Ouch!",
+            "点击敬奉祭品给",
+            "Reach gift milestones for rewards",
+            "Click to gift to"
 
     );
     private static final List<String> SPECIAL_WORDS = Arrays.asList(
@@ -122,7 +125,9 @@ public class ArmorStandNameTagHider {
             "Basement",
             "1楼",
             "地窖",
-            "大厅"
+            "大厅",
+            "里程碑：",
+            "Milestone:"
     );
 
     @SubscribeEvent
