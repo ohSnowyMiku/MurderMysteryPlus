@@ -63,6 +63,39 @@ public class MurderMysteryHelperConfig extends Config {
     public static boolean chatChannelSwapSwitch = false;
 
 
+    @Switch(
+            name = "Auto Send Bow Shot Distance Message",
+            size = OptionSize.DUAL
+    )
+    public static boolean autoSendBowShotDistanceMessageSwitch = false;
+
+
+    @Dropdown(
+            name = "Language",
+            options = {"English", "Chinese"}
+    )
+    public static int languageValue = 0;
+
+
+    @Checkbox(
+            name = "Send to Public"
+    )
+    public static boolean sendToPublic = false;
+
+
+    @Checkbox(
+            name = "Send to Party"
+    )
+    public static boolean sendToParty = false;
+
+
+    @Checkbox(
+            name = "Send to Guild"
+    )
+    public static boolean sendToGuild = false;
+
+
+
 
     @Switch(
             name = "Hide Bow Pulling Animation",
@@ -147,6 +180,10 @@ public class MurderMysteryHelperConfig extends Config {
         //禁用选项addDependency需要放在initialize();下面
         addDependency("onlyWorkInMurderMysterySwitch", "goldIngotOverlaySwitch");
         addDependency("goldIngotOverlayMultiplier", "goldIngotOverlaySwitch");
+        addDependency("languageValue","autoSendBowShotDistanceMessageSwitch");
+        addDependency("sendToPublic","autoSendBowShotDistanceMessageSwitch");
+        addDependency("sendToParty","autoSendBowShotDistanceMessageSwitch");
+        addDependency("sendToGuild","autoSendBowShotDistanceMessageSwitch");
     }
 }
 

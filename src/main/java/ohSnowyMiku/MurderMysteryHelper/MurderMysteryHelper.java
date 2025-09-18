@@ -13,6 +13,7 @@ import ohSnowyMiku.MurderMysteryHelper.event.events.ArmorStandHandlerEvent;
 import ohSnowyMiku.MurderMysteryHelper.event.events.BowHideHandler;
 import ohSnowyMiku.MurderMysteryHelper.event.events.HiddenKaliSpamEvent;
 import ohSnowyMiku.MurderMysteryHelper.event.events.HiddenMurderTitleTipEvent;
+import ohSnowyMiku.MurderMysteryHelper.event.events.chat.AutoShowShotDistanceInChat;
 import ohSnowyMiku.MurderMysteryHelper.event.events.mapeventhud.SecretPassageHudEvent;
 import ohSnowyMiku.MurderMysteryHelper.event.events.bowprotector.BowProtector;
 import ohSnowyMiku.MurderMysteryHelper.event.events.chatchannelswap.ChatChannelSwap;
@@ -73,6 +74,7 @@ public class MurderMysteryHelper {
         MinecraftForge.EVENT_BUS.register(new ArmorStandNameTagHider());
         MinecraftForge.EVENT_BUS.register(new ChatFixHandler());
         MinecraftForge.EVENT_BUS.register(new ChatChannelSwap());
+        MinecraftForge.EVENT_BUS.register(new AutoShowShotDistanceInChat());
         //MinecraftForge.EVENT_BUS.register(new SpawnProtector());
         //MinecraftForge.EVENT_BUS.register(new CheckPlayerJoinWorldUtil());
         //MinecraftForge.EVENT_BUS.register(new BetterNametag());
