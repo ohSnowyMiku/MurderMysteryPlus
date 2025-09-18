@@ -7,7 +7,7 @@ import cc.polyfrost.oneconfig.libs.eventbus.Subscribe;
 import net.minecraft.network.play.server.S01PacketJoinGame;
 import ohSnowyMiku.MurderMysteryHelper.config.MurderMysteryHelperConfig;
 import ohSnowyMiku.MurderMysteryHelper.event.events.HiddenMurderTitleTipEvent;
-import ohSnowyMiku.MurderMysteryHelper.event.events.MapEventHud.SecretPassageHudEvent;
+import ohSnowyMiku.MurderMysteryHelper.event.events.mapeventhud.SecretPassageHudEvent;
 import ohSnowyMiku.MurderMysteryHelper.event.events.tablistrole.ChatPlayerRoleListener;
 
 import static ohSnowyMiku.MurderMysteryHelper.utils.CheckPlayerGameMapNameUtil.checkPlayerGameMapName;

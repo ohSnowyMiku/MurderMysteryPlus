@@ -1,4 +1,4 @@
-package ohSnowyMiku.MurderMysteryHelper.event.events.MapEventHud;
+package ohSnowyMiku.MurderMysteryHelper.event.events.mapeventhud;
 
 import cc.polyfrost.oneconfig.events.event.ReceivePacketEvent;
 import cc.polyfrost.oneconfig.libs.eventbus.Subscribe;

@@ -56,6 +56,12 @@ public class MurderMysteryHelperConfig extends Config {
     public static boolean hideArmorStandNameTagSwitch = false;
 
 
+    @Switch(
+            name = "Chat Channel Swap",
+            size = OptionSize.DUAL
+    )
+    public static boolean chatChannelSwapSwitch = false;
+
 
 
     @Switch(

@@ -4,7 +4,7 @@ import cc.polyfrost.oneconfig.config.core.OneColor;
 import cc.polyfrost.oneconfig.hud.BasicHud;
 import cc.polyfrost.oneconfig.libs.universal.UMatrixStack;
 import cc.polyfrost.oneconfig.renderer.TextRenderer;
-import ohSnowyMiku.MurderMysteryHelper.event.events.MapEventHud.SecretPassageHudEvent;
+import ohSnowyMiku.MurderMysteryHelper.event.events.mapeventhud.SecretPassageHudEvent;
 
 public class SecretPassageHud extends BasicHud {
     public SecretPassageHud() {

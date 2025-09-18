@@ -112,7 +112,9 @@ public class ArmorStandNameTagHider {
             "Ouch!",
             "点击敬奉祭品给",
             "Reach gift milestones for rewards",
-            "Click to gift to"
+            "Click to gift to",
+            "尚无！",
+            "No one yet!"
 
     );
     private static final List<String> SPECIAL_WORDS = Arrays.asList(
