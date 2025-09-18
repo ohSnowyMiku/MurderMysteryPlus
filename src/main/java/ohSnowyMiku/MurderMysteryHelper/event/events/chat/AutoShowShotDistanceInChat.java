@@ -28,17 +28,17 @@ public class AutoShowShotDistanceInChat {
         if (ChatUtil.containsInLastFormatted("§r§e你射到了距离你")
                 || ChatUtil.containsInLastFormatted("§r§eYou shot someone from")) {
 
-            System.out.println("匹配到文本");
+
             String message = event.message.getFormattedText();
 
             Matcher matcher = DISTANCE_PATTERN.matcher(message);
 
             if (matcher.find()) {
-                System.out.println("正则表达式匹配成功");
+
                 String number = matcher.group(1);
                 double distance = Double.parseDouble(number);
                 sendMessage(distance);
-                System.out.println("传递中");
+
             }
         }
     }
@@ -47,10 +47,10 @@ public class AutoShowShotDistanceInChat {
         String msg;
 
         if (MurderMysteryHelperConfig.languageValue == 0) {
-            System.out.println("英文");
+
             msg = "[MurderMysteryHelper] You shot someone from " + distance + " blocks away!";
         } else {
-            System.out.println("中文");
+
             msg = "[MurderMysteryHelper] 你射到了距离你" + distance + "格方块的玩家！";
         }
 
@@ -58,23 +58,18 @@ public class AutoShowShotDistanceInChat {
         sendIfEnabled(mc, MurderMysteryHelperConfig.sendToPublic, "/ac " + msg);
         sendIfEnabled(mc, MurderMysteryHelperConfig.sendToParty, "/pc " + msg);
         sendIfEnabled(mc, MurderMysteryHelperConfig.sendToGuild, "/gc " + msg);
-        System.out.println("发送中");
+
     }
 
     private void sendIfEnabled(Minecraft mc, boolean enabled, String message) {
         if (enabled) {
             LocrawInfo locraw = LocrawUtil.INSTANCE.getLocrawInfo();
-            /*if (locraw == null) {
-                return false;
-            }
-            if (locraw.getMapName() == null) {
-                return false;
-            }*/
+
             if (locraw != null) {
                 String mapName = locraw.getMapName();
                 mc.thePlayer.sendChatMessage(message + " (" + mapName + ")");
             }
-            System.out.println("发送!");
+
         }
     }
 }
