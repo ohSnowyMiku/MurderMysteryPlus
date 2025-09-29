@@ -20,8 +20,8 @@ public class AutoShowShotDistanceInChat {
 
     @SubscribeEvent
     public void onChat(ClientChatReceivedEvent event) {
-        //ChatUtil.printLastChat("你射到了");
-        //ChatUtil.printLastChat("You shot someone");
+        //ChatUtil.printLastChat("你只能");
+        //ChatUtil.printLastChat("may");
 
         if (!MurderMysteryHelperConfig.autoSendBowShotDistanceMessageSwitch) return;
 

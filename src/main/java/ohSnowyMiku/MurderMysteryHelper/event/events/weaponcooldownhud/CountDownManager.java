@@ -40,4 +40,9 @@ public class CountDownManager {
     public static float getSecondsLeft() {
         return tickRemaining / 20.0f;
     }
+
+    public static void forceStart(int ticks) {
+        stop();
+        start(ticks);
+    }
 }
