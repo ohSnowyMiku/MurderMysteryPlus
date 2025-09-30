@@ -17,16 +17,20 @@ import ohSnowyMiku.MurderMysteryHelper.hud.WeaponCooldownHud;
 public class MurderMysteryHelperConfig extends Config {
 
     @Switch(
-            name = "Hide Kali Spam Message",
-            size = OptionSize.SINGLE // Optional
-    )
-    public static boolean hiddenKaliSpamMessage = false; // The default value for the boolean Switch.
-
-    @Switch(
             name = "Hide Murder Title Tip",
             size = OptionSize.DUAL
     )
     public static boolean hiddenMurderTitleTipSwitch = true;
+
+
+    @Switch(
+            name = "Hide Kali Spam Message",
+            size = OptionSize.SINGLE, // Optional
+            category = "Chat",
+            description = "hide spam message"
+    )
+    public static boolean hiddenKaliSpamMessage = false; // The default value for the boolean Switch.
+
 
     @Switch(
             name = "Disable Gestures ArmorStand",
@@ -58,39 +62,45 @@ public class MurderMysteryHelperConfig extends Config {
 
     @Switch(
             name = "Chat Channel Swap",
-            size = OptionSize.DUAL
+            size = OptionSize.DUAL,
+            category = "Chat"
     )
     public static boolean chatChannelSwapSwitch = false;
 
 
     @Switch(
             name = "Auto Send Bow Shot Distance Message",
-            size = OptionSize.DUAL
+            size = OptionSize.DUAL,
+            category = "Chat"
     )
     public static boolean autoSendBowShotDistanceMessageSwitch = false;
 
 
     @Dropdown(
             name = "Language",
-            options = {"English", "Chinese"}
+            options = {"English", "Chinese"},
+            category = "Chat"
     )
     public static int languageValue = 0;
 
 
     @Checkbox(
-            name = "Send to Public"
+            name = "Send to Public",
+            category = "Chat"
     )
     public static boolean sendToPublic = false;
 
 
     @Checkbox(
-            name = "Send to Party"
+            name = "Send to Party",
+            category = "Chat"
     )
     public static boolean sendToParty = false;
 
 
     @Checkbox(
-            name = "Send to Guild"
+            name = "Send to Guild",
+            category = "Chat"
     )
     public static boolean sendToGuild = false;
 

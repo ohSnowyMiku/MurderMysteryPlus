@@ -54,13 +54,13 @@ public class SecretPassageHud extends BasicHud {
     }
 
     @Override
-    protected float getHeight(float scale, boolean example) {
-        return 0;
+    protected float getWidth(float scale, boolean example) {
+        return 122f;
     }
 
     @Override
-    protected float getWidth(float scale, boolean example) {
-        return 0;
+    protected float getHeight(float scale, boolean example) {
+        return 6f;
     }
 }
 

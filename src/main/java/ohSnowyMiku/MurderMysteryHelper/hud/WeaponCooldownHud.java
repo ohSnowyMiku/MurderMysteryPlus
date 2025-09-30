@@ -63,12 +63,12 @@ public class WeaponCooldownHud extends BasicHud {
 
     @Override
     protected float getWidth(float scale, boolean example) {
-        return 0;
+        return 12f;
     }
 
     @Override
     protected float getHeight(float scale, boolean example) {
-        return 0;
+        return 5f;
     }
 
 }
