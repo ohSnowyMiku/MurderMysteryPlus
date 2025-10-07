@@ -13,11 +13,12 @@ import ohSnowyMiku.MurderMysteryHelper.event.events.ArmorStandHandlerEvent;
 import ohSnowyMiku.MurderMysteryHelper.event.events.BowHideHandler;
 import ohSnowyMiku.MurderMysteryHelper.event.events.HiddenKaliSpamEvent;
 import ohSnowyMiku.MurderMysteryHelper.event.events.HiddenMurderTitleTipEvent;
-import ohSnowyMiku.MurderMysteryHelper.event.events.chat.AutoShowShotDistanceInChat;
-import ohSnowyMiku.MurderMysteryHelper.event.events.mapeventhud.SecretPassageHudEvent;
 import ohSnowyMiku.MurderMysteryHelper.event.events.bowprotector.BowProtector;
+import ohSnowyMiku.MurderMysteryHelper.event.events.chat.AutoShowShotDistanceInChat;
 import ohSnowyMiku.MurderMysteryHelper.event.events.chatchannelswap.ChatChannelSwap;
+import ohSnowyMiku.MurderMysteryHelper.event.events.mapeventhud.SecretPassageHudEvent;
 import ohSnowyMiku.MurderMysteryHelper.event.events.nametaghider.ArmorStandNameTagHider;
+import ohSnowyMiku.MurderMysteryHelper.event.events.rolesender.RoleSender;
 import ohSnowyMiku.MurderMysteryHelper.event.events.tablistrole.ChatPlayerRoleListener;
 import ohSnowyMiku.MurderMysteryHelper.event.events.tablistrole.TabListEventHandler;
 import ohSnowyMiku.MurderMysteryHelper.event.events.weaponcooldownhud.ChatHandler;
@@ -25,7 +26,9 @@ import ohSnowyMiku.MurderMysteryHelper.event.events.weaponcooldownhud.ScoreBarLi
 import ohSnowyMiku.MurderMysteryHelper.event.events.weaponcooldownhud.TickHandler;
 import ohSnowyMiku.MurderMysteryHelper.others.font.ChatFixHandler;
 import ohSnowyMiku.MurderMysteryHelper.others.resourcepack.hook;
-import ohSnowyMiku.MurderMysteryHelper.utils.*;
+import ohSnowyMiku.MurderMysteryHelper.utils.ChatUtil;
+import ohSnowyMiku.MurderMysteryHelper.utils.CheckPlayerJoinGameUtil;
+import ohSnowyMiku.MurderMysteryHelper.utils.SimpleDelayedChatUtil;
 
 /**
  * The entrypoint of the Example Mod that initializes it.
@@ -58,6 +61,7 @@ public class MurderMysteryHelper {
         EventManager.INSTANCE.register(new CheckPlayerJoinGameUtil());
         EventManager.INSTANCE.register(new HiddenMurderTitleTipEvent());
         EventManager.INSTANCE.register(new BowProtector());
+        EventManager.INSTANCE.register(new RoleSender());
 
         //MinecraftForge.EVENT_BUS.register(new GetChatMessageUtil());
         //MinecraftForge.EVENT_BUS.register(Get1ChatMessageUtil.class);
@@ -78,8 +82,6 @@ public class MurderMysteryHelper {
         //MinecraftForge.EVENT_BUS.register(new SpawnProtector());
         //MinecraftForge.EVENT_BUS.register(new CheckPlayerJoinWorldUtil());
         //MinecraftForge.EVENT_BUS.register(new BetterNametag());
-
-
         if (FMLCommonHandler.instance().getSide().isClient()) {
             // 保证在客户端主线程、资源仓库准备好之后执行
             net.minecraft.client.Minecraft.getMinecraft().addScheduledTask(hook::applyOnce);

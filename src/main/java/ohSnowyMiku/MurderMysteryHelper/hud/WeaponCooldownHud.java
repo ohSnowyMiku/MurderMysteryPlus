@@ -71,6 +71,10 @@ public class WeaponCooldownHud extends BasicHud {
         return 5f;
     }
 
+    @Override
+    protected boolean shouldDrawBackground() {
+        return false;
+    }
 }
 
 

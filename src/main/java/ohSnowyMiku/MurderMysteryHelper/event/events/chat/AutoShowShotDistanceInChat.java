@@ -46,7 +46,7 @@ public class AutoShowShotDistanceInChat {
         Minecraft mc = Minecraft.getMinecraft();
         String msg;
 
-        if (MurderMysteryHelperConfig.languageValue == 0) {
+        if (MurderMysteryHelperConfig.autoSendBowShotDistanceMessageLanguageValue == 0) {
 
             msg = "[MurderMysteryHelper] You shot someone from " + distance + " blocks away!";
         } else {

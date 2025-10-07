@@ -62,6 +62,11 @@ public class SecretPassageHud extends BasicHud {
     protected float getHeight(float scale, boolean example) {
         return 6f;
     }
+
+    @Override
+    protected boolean shouldDrawBackground() {
+        return false;
+    }
 }
 
 

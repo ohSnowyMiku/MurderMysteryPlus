@@ -81,7 +81,7 @@ public class MurderMysteryHelperConfig extends Config {
             options = {"English", "Chinese"},
             category = "Chat"
     )
-    public static int languageValue = 0;
+    public static int autoSendBowShotDistanceMessageLanguageValue = 0;
 
 
     @Checkbox(
@@ -105,6 +105,22 @@ public class MurderMysteryHelperConfig extends Config {
     public static boolean sendToGuild = false;
 
 
+    @Switch(
+            name = "Auto Send My Role In Party Chat",
+            category = "Chat",
+            subcategory = "Role Sender",
+            size = OptionSize.DUAL
+    )
+    public static boolean autoSendMyRoleInPartyChatSwitch = false;
+
+
+    @Dropdown(
+            name = "Language",
+            options = {"English", "Chinese"},
+            category = "Chat",
+            subcategory = "Role Sender"
+    )
+    public static int autoSendMyRoleInPartyChatLanguageValue = 0;
 
 
     @Switch(
@@ -190,7 +206,7 @@ public class MurderMysteryHelperConfig extends Config {
         //禁用选项addDependency需要放在initialize();下面
         addDependency("onlyWorkInMurderMysterySwitch", "goldIngotOverlaySwitch");
         addDependency("goldIngotOverlayMultiplier", "goldIngotOverlaySwitch");
-        addDependency("languageValue","autoSendBowShotDistanceMessageSwitch");
+        addDependency("autoSendBowShotDistanceMessageLanguageValue","autoSendBowShotDistanceMessageSwitch");
         addDependency("sendToPublic","autoSendBowShotDistanceMessageSwitch");
         addDependency("sendToParty","autoSendBowShotDistanceMessageSwitch");
         addDependency("sendToGuild","autoSendBowShotDistanceMessageSwitch");

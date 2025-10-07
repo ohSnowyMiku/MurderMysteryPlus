@@ -147,6 +147,8 @@ public class ArmorStandNameTagHider {
 
             if (checkArmorStandNameTag(name) == 0) return;
 
+            if (name.contains("临终遗言") || name.contains("Last Words")) return;
+
             if (checkArmorStandNameTag(name) == 1) {
                 event.setCanceled(true); // 取消默认的 nametag 渲染
             }

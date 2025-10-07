@@ -8,7 +8,7 @@ import ohSnowyMiku.MurderMysteryHelper.utils.ChatUtil;
 
 public class ChatChannelSwap {
 
-    private boolean inParty = false;
+    public static boolean inParty = false;
 
     private static final Minecraft mc = Minecraft.getMinecraft();
 
