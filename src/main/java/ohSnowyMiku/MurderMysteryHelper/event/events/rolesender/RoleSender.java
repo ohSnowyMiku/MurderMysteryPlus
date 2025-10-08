@@ -45,7 +45,11 @@ public class RoleSender {
     }
 
     private void sendMessage(String title) {
-        if (is1v1Or2v2() && !inParty) {
+        if (is1v1Or2v2()) {
+            return;
+        }
+
+        if (!inParty) {
             return;
         }
         //System.out.println("当前非1v1");
@@ -70,7 +74,8 @@ public class RoleSender {
         }*/
         }
 
-        if (title.contains("杀手") || title.contains("MURDERER")) {
+        if ((title.contains("杀手") && title.contains("身份"))
+                || (title.contains("MURDERER")) && title.contains("Role")) {
             mc.thePlayer.sendChatMessage(murdererMsg);
         }
     }
