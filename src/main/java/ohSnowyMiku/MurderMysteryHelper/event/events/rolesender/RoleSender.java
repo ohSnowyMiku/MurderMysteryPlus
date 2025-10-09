@@ -75,7 +75,7 @@ public class RoleSender {
         }
 
         if ((title.contains("杀手") && title.contains("身份"))
-                || (title.contains("MURDERER")) && title.contains("Role")) {
+                || (title.contains("MURDERER")) && title.contains("ROLE")) {
             mc.thePlayer.sendChatMessage(murdererMsg);
         }
     }
