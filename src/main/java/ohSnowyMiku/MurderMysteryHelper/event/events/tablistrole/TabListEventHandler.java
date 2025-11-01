@@ -34,7 +34,7 @@ public class TabListEventHandler {
 
         Minecraft mc = Minecraft.getMinecraft();
         if (mc.theWorld == null || mc.thePlayer == null) return;
-        if (!MurderMysteryHelperConfig.showRolesInTabListFromChatSwitch) return;
+        if (!MurderMysteryHelperConfig.showRolesInTabListSwitch) return;
 
         if (coolDown > 0) {
             coolDown--;

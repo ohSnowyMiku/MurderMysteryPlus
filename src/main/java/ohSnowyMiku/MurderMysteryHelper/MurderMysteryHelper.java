@@ -26,9 +26,11 @@ import ohSnowyMiku.MurderMysteryHelper.event.events.weaponcooldownhud.ScoreBarLi
 import ohSnowyMiku.MurderMysteryHelper.event.events.weaponcooldownhud.TickHandler;
 import ohSnowyMiku.MurderMysteryHelper.others.font.ChatFixHandler;
 import ohSnowyMiku.MurderMysteryHelper.others.resourcepack.hook;
+import ohSnowyMiku.MurderMysteryHelper.sound.ChatPingHandler;
 import ohSnowyMiku.MurderMysteryHelper.utils.ChatUtil;
 import ohSnowyMiku.MurderMysteryHelper.utils.CheckPlayerJoinGameUtil;
 import ohSnowyMiku.MurderMysteryHelper.utils.SimpleDelayedChatUtil;
+import ohSnowyMiku.MurderMysteryHelper.utils.TickDelayUtil;
 
 /**
  * The entrypoint of the Example Mod that initializes it.
@@ -79,9 +81,13 @@ public class MurderMysteryHelper {
         MinecraftForge.EVENT_BUS.register(new ChatFixHandler());
         MinecraftForge.EVENT_BUS.register(new ChatChannelSwap());
         MinecraftForge.EVENT_BUS.register(new AutoShowShotDistanceInChat());
+        //MinecraftForge.EVENT_BUS.register(new ChatPingHandler());
+        //MinecraftForge.EVENT_BUS.register(new ArmorStandProtector());
+        //MinecraftForge.EVENT_BUS.register(new KnifeProtector());
         //MinecraftForge.EVENT_BUS.register(new SpawnProtector());
         //MinecraftForge.EVENT_BUS.register(new CheckPlayerJoinWorldUtil());
         //MinecraftForge.EVENT_BUS.register(new BetterNametag());
+        TickDelayUtil.init();
         if (FMLCommonHandler.instance().getSide().isClient()) {
             // 保证在客户端主线程、资源仓库准备好之后执行
             net.minecraft.client.Minecraft.getMinecraft().addScheduledTask(hook::applyOnce);

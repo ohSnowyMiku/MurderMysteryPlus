@@ -6,7 +6,7 @@ import cc.polyfrost.oneconfig.libs.universal.UMatrixStack;
 import cc.polyfrost.oneconfig.renderer.TextRenderer;
 import ohSnowyMiku.MurderMysteryHelper.event.events.weaponcooldownhud.CountDownManager;
 
-import static ohSnowyMiku.MurderMysteryHelper.config.MurderMysteryHelperConfig.color;
+import static ohSnowyMiku.MurderMysteryHelper.config.MurderMysteryHelperConfig.WeaponCooldownHudPage.color;
 
 public class WeaponCooldownHud extends BasicHud {
 

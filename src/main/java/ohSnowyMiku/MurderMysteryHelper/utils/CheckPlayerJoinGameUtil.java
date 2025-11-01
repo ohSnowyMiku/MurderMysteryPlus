@@ -8,6 +8,7 @@ import net.minecraft.network.play.server.S01PacketJoinGame;
 import ohSnowyMiku.MurderMysteryHelper.config.MurderMysteryHelperConfig;
 import ohSnowyMiku.MurderMysteryHelper.event.events.HiddenMurderTitleTipEvent;
 import ohSnowyMiku.MurderMysteryHelper.event.events.mapeventhud.SecretPassageHudEvent;
+import ohSnowyMiku.MurderMysteryHelper.event.events.rolesender.RoleSender;
 import ohSnowyMiku.MurderMysteryHelper.event.events.tablistrole.ChatPlayerRoleListener;
 
 import static ohSnowyMiku.MurderMysteryHelper.utils.CheckPlayerGameMapNameUtil.checkPlayerGameMapName;
@@ -24,6 +25,7 @@ public class CheckPlayerJoinGameUtil {
 
             ChatPlayerRoleListener.clearAll();
             HiddenMurderTitleTipEvent.shouldCancel = false;
+            RoleSender.shouldCheckTitle = true;
 
             delayTicks = 60;
         }

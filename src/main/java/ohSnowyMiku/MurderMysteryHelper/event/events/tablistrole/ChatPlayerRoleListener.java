@@ -17,7 +17,7 @@ public class ChatPlayerRoleListener {
 
 
     // 聊天触发控制开关
-    private static final boolean ENABLED = MurderMysteryHelperConfig.showRolesInTabListFromChatSwitch;
+    private static final boolean ENABLED = MurderMysteryHelperConfig.showRolesInTabListSwitch;
 
     // 玩家 → 前缀 映射
     public static final Map<String, String> NAMETOPREFIX = new HashMap<>();

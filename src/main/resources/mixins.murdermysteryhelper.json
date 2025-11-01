@@ -11,6 +11,9 @@
   ],
   "verbose": true,
   "mixins": [
+    "MixinEntityHorse",
+    "MixinItemBoat",
+    "MixinItemNameTag",
     "MixinScoreboard"
   ]
 }

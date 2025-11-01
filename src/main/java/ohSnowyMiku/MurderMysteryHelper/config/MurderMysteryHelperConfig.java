@@ -2,6 +2,9 @@ package ohSnowyMiku.MurderMysteryHelper.config;
 
 import cc.polyfrost.oneconfig.config.annotations.*;
 import cc.polyfrost.oneconfig.config.core.OneColor;
+import cc.polyfrost.oneconfig.config.data.PageLocation;
+import cc.polyfrost.oneconfig.gui.pages.ModConfigPage;
+import cc.polyfrost.oneconfig.utils.InputHandler;
 import ohSnowyMiku.MurderMysteryHelper.MurderMysteryHelper;
 import cc.polyfrost.oneconfig.config.Config;
 import cc.polyfrost.oneconfig.config.data.Mod;
@@ -40,10 +43,10 @@ public class MurderMysteryHelperConfig extends Config {
 
 
     @Switch(
-            name = "Show Roles in TabList from Chat",
+            name = "Show Roles in TabList",
             size = OptionSize.DUAL
     )
-    public static boolean showRolesInTabListFromChatSwitch = true;
+    public static boolean showRolesInTabListSwitch = true;
 
 
     @Switch(
@@ -51,6 +54,13 @@ public class MurderMysteryHelperConfig extends Config {
             size = OptionSize.DUAL
     )
     public static boolean bowProtectorSwitch = false;
+
+
+    @Switch(
+            name = "Knife Protector",
+            size = OptionSize.DUAL
+    )
+    public static boolean knifeProtectorSwitch = false;
 
 
     @Switch(
@@ -164,6 +174,15 @@ public class MurderMysteryHelperConfig extends Config {
     )
     public static boolean secretPassageOpenStatusSwitch = false;
 
+    @Page(
+            name = "Secret Passage Status HUD Settings",
+            category = "HUD",
+            subcategory = "Secret Passage Status HUD",
+            location = PageLocation.BOTTOM,
+            description = "Press me to open HUD settings"
+    )
+    public static SecretPassageOpenStatusHudPage secretPassageOpenStatusHudPage = new SecretPassageOpenStatusHudPage();
+
 
     @Switch(
             name = "Show Weapon Cooldown Hud",
@@ -173,28 +192,14 @@ public class MurderMysteryHelperConfig extends Config {
     )
     public static boolean showWeaponCooldownHudSwitch = false;
 
-
-    @HUD(
-            name = "Secret Passage Status HUD",
-            category = "HUD"
+    @Page(
+            name = "Weapon Cooldown Hud Settings",
+            category = "HUD",
+            subcategory = "Weapon Cooldown Hud",
+            location = PageLocation.BOTTOM,
+            description = "Press me to open HUD settings"
     )
-    public SecretPassageHud secretPassageHud = new SecretPassageHud();
-
-
-    @HUD(
-            name = "Weapon Cooldown Hud",
-            category = "HUD"
-    )
-
-    public WeaponCooldownHud weaponCooldownHud = new WeaponCooldownHud();
-
-
-    @Color(
-            name = "Text Color",
-            description = "Change the color of the text",
-            category = "HUD"
-    )
-    public static OneColor color = new OneColor(255, 255, 255, 255);
+    public static WeaponCooldownHudPage weaponCooldownHud = new WeaponCooldownHudPage();
 
 
 
@@ -210,6 +215,37 @@ public class MurderMysteryHelperConfig extends Config {
         addDependency("sendToPublic","autoSendBowShotDistanceMessageSwitch");
         addDependency("sendToParty","autoSendBowShotDistanceMessageSwitch");
         addDependency("sendToGuild","autoSendBowShotDistanceMessageSwitch");
+    }
+    public static class MyPage{
+        @Switch(
+                name = "test123"
+        )
+        public static boolean test123Switch = false;
+
+    }
+
+    public static class SecretPassageOpenStatusHudPage {
+        @HUD(
+                name = "Secret Passage Status HUD",
+                category = "HUD"
+        )
+        public SecretPassageHud secretPassageHud = new SecretPassageHud();
+    }
+
+    public static class WeaponCooldownHudPage {
+        @HUD(
+                name = "Weapon Cooldown Hud",
+                category = "HUD"
+        )
+
+        public WeaponCooldownHud weaponCooldownHud = new WeaponCooldownHud();
+
+        @Color(
+                name = "Text Color",
+                description = "Change the color of the text",
+                category = "HUD"
+        )
+        public static OneColor color = new OneColor(255, 255, 255, 255);
     }
 }
 
