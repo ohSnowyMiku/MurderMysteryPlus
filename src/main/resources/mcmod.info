@@ -1,7 +1,7 @@
 [
   {
-    "modid": "murdermysteryhelper",
-    "name": "MurderMysteryHelper",
+    "modid": "murdermysteryplus",
+    "name": "MurderMysteryPlus",
     "description": "Hypixel密室杀手辅助增强MOD",
     "version": "${version}",
     "mcversion": "1.8.9",
@@ -11,7 +11,7 @@
       "ohSnowyMiku"
     ],
     "credits": "",
-    "logoFile": "assets/murdermysteryhelper/textures/logo.png",
+    "logoFile": "assets/murdermysteryplus/textures/logo.png",
     "screenshots": [],
     "dependencies": []
   }

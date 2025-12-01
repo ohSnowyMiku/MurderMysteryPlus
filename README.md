@@ -1,10 +1,10 @@
-# MurderMysteryHelper
+# MurderMysteryPlus
 
 ![Powered by OneConfig](https://polyfrost.org/media/branding/badges/badge_1.svg)
 ![Minimal Powered by OneConfig](https://polyfrost.org/media/branding/badges/badge_3.svg)
 
 
-MurderMysteryHelper is a mod specifically designed for Hypixel MurderMystery, allowing you to have a better experience while playing MurderMystery.
+MurderMysteryPlus is a mod specifically designed for Hypixel MurderMystery, allowing you to have a better experience while playing MurderMystery.
 
 ## Features
 
