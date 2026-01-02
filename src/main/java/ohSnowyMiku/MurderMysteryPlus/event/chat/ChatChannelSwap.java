@@ -16,7 +16,6 @@ public class ChatChannelSwap {
     @SubscribeEvent
     public void checkPartyMessage(ClientChatReceivedEvent event) {
 
-        if (!MurderMysteryPlusConfig.chatChannelSwapSwitch) return;
 
         onJoinParty();
         onLeaveParty();
@@ -28,6 +27,7 @@ public class ChatChannelSwap {
         if (mc.thePlayer == null || mc.thePlayer.getName() == null) return;
         String self = mc.thePlayer.getName();
 
+        //System.out.println(inParty);
         if (inParty) return;
         if ((ChatUtil.containsInLastFormatted("§e你加入了")
                 && ChatUtil.containsInLastFormatted("§e的组队！"))
@@ -38,28 +38,31 @@ public class ChatChannelSwap {
                 || (ChatUtil.containsInLastFormatted(self + " §r§einvited")
                 && ChatUtil.containsInLastFormatted("§eto the party!"))
         ) {
-            mc.thePlayer.sendChatMessage("/chat p");
+            //System.out.println(inParty);
             inParty = true;
+            if (!MurderMysteryPlusConfig.chatChannelSwapSwitch) return;
+            mc.thePlayer.sendChatMessage("/chat p");
         }
     }
 
     private void onLeaveParty() {
 
-        if (!inParty) return;
+        //if (!inParty) return;
         if (ChatUtil.containsInLastFormatted("§c因组队中没有成员，")
                 || ChatUtil.containsInLastFormatted("§e你离开了组队。")
                 || ChatUtil.containsInLastFormatted("§cThe party was disbanded")
                 || ChatUtil.containsInLastFormatted("§eYou left the party.")
                 || ChatUtil.containsInLastFormatted("§ehas disbanded the party!")
-                || ChatUtil.containsInLastFormatted("§e解散了组队"))
-        {
-            mc.thePlayer.sendChatMessage("/chat a");
+                || ChatUtil.containsInLastFormatted("§e解散了组队")) {
+            //System.out.println(inParty);
             inParty = false;
+            if (!MurderMysteryPlusConfig.chatChannelSwapSwitch) return;
+            mc.thePlayer.sendChatMessage("/chat a");
         }
 
         if (ChatUtil.containsInLastFormatted("§cYou are not in a party")
                 || ChatUtil.containsInLastFormatted("§c你不在任何组队中，")) {
-
+            //System.out.println(inParty);
             inParty = false;
         }
     }

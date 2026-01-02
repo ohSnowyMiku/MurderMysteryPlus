@@ -8,22 +8,25 @@ import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import ohSnowyMiku.MurderMysteryPlus.command.ExampleCommand;
+import ohSnowyMiku.MurderMysteryPlus.command.UpdateCommand;
 import ohSnowyMiku.MurderMysteryPlus.config.MurderMysteryPlusConfig;
-import ohSnowyMiku.MurderMysteryPlus.event.item.gestureprotector.ArmorStandHandlerEvent;
-import ohSnowyMiku.MurderMysteryPlus.event.item.invisiblebow.BowHideHandler;
-import ohSnowyMiku.MurderMysteryPlus.event.chat.HiddenKaliSpamEvent;
-import ohSnowyMiku.MurderMysteryPlus.event.hud.title.titlehider.HiddenMurderTipTitleEvent;
-import ohSnowyMiku.MurderMysteryPlus.event.item.bowprotector.BowProtector;
-import ohSnowyMiku.MurderMysteryPlus.event.chat.AutoShowShotDistanceInChat;
-import ohSnowyMiku.MurderMysteryPlus.event.chat.ChatChannelSwap;
+import ohSnowyMiku.MurderMysteryPlus.event.chat.*;
 import ohSnowyMiku.MurderMysteryPlus.event.hud.mapeventhud.SecretPassageHudEvent;
-import ohSnowyMiku.MurderMysteryPlus.event.nametag.nametaghider.ArmorStandNameTagHider;
-import ohSnowyMiku.MurderMysteryPlus.event.chat.RoleSender;
 import ohSnowyMiku.MurderMysteryPlus.event.hud.tablist.tablistrole.ChatPlayerRoleListener;
 import ohSnowyMiku.MurderMysteryPlus.event.hud.tablist.tablistrole.TabListEventHandler;
+import ohSnowyMiku.MurderMysteryPlus.event.hud.title.TitleTips;
+import ohSnowyMiku.MurderMysteryPlus.event.hud.title.titlehider.HiddenMurderTipTitleEvent;
 import ohSnowyMiku.MurderMysteryPlus.event.hud.weaponcooldownhud.ChatHandler;
 import ohSnowyMiku.MurderMysteryPlus.event.hud.weaponcooldownhud.ScoreBarListener;
 import ohSnowyMiku.MurderMysteryPlus.event.hud.weaponcooldownhud.TickHandler;
+import ohSnowyMiku.MurderMysteryPlus.event.item.bowprotector.BowProtector;
+import ohSnowyMiku.MurderMysteryPlus.event.item.gestureprotector.ArmorStandHandlerEvent;
+import ohSnowyMiku.MurderMysteryPlus.event.item.invisiblebow.BowHideHandler;
+import ohSnowyMiku.MurderMysteryPlus.event.nametag.nametaghider.ArmorStandNameTagHider;
+import ohSnowyMiku.MurderMysteryPlus.event.particle.ArmorStandParticle;
+import ohSnowyMiku.MurderMysteryPlus.event.sound.SoundListener;
+import ohSnowyMiku.MurderMysteryPlus.mixin.MixinEffectRenderer;
+import ohSnowyMiku.MurderMysteryPlus.event.sound.ChatPingHandler;
 import ohSnowyMiku.MurderMysteryPlus.other.font.ChatFixHandler;
 import ohSnowyMiku.MurderMysteryPlus.other.resourcepack.hook;
 import ohSnowyMiku.MurderMysteryPlus.utils.ChatUtil;
@@ -54,6 +57,8 @@ public class MurderMysteryPlus {
         config = new MurderMysteryPlusConfig();
 
         CommandManager.INSTANCE.registerCommand(new ExampleCommand());
+        CommandManager.INSTANCE.registerCommand(new UpdateCommand());
+        //UpdateApplier.applyCachedUpdate();
 
         //EventManager.INSTANCE.register(new SecretPassageHudEvent());
         EventManager.INSTANCE.register(new SecretPassageHudEvent());
@@ -63,6 +68,7 @@ public class MurderMysteryPlus {
         EventManager.INSTANCE.register(new HiddenMurderTipTitleEvent());
         EventManager.INSTANCE.register(new BowProtector());
         EventManager.INSTANCE.register(new RoleSender());
+        //EventManager.INSTANCE.register(new ParticleManager());
 
         //MinecraftForge.EVENT_BUS.register(new GetChatMessageUtil());
         //MinecraftForge.EVENT_BUS.register(Get1ChatMessageUtil.class);
@@ -80,7 +86,13 @@ public class MurderMysteryPlus {
         MinecraftForge.EVENT_BUS.register(new ChatFixHandler());
         MinecraftForge.EVENT_BUS.register(new ChatChannelSwap());
         MinecraftForge.EVENT_BUS.register(new AutoShowShotDistanceInChat());
-        //MinecraftForge.EVENT_BUS.register(new ChatPingHandler());
+        //MinecraftForge.EVENT_BUS.register(new UpdateEventHandler());
+        //MinecraftForge.EVENT_BUS.register(new MixinEffectRenderer());
+        MinecraftForge.EVENT_BUS.register(new ChatPingHandler());
+        MinecraftForge.EVENT_BUS.register(new TitleTips());
+        MinecraftForge.EVENT_BUS.register(new CommandSender());
+        MinecraftForge.EVENT_BUS.register(new ArmorStandParticle());
+        //MinecraftForge.EVENT_BUS.register(new SoundListener());
         //MinecraftForge.EVENT_BUS.register(new ArmorStandProtector());
         //MinecraftForge.EVENT_BUS.register(new KnifeProtector());
         //MinecraftForge.EVENT_BUS.register(new SpawnProtector());

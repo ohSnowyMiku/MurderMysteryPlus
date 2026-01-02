@@ -10,14 +10,14 @@ public class SoundListener {
         if (event.sound == null) {
             return;
         }
-/*if (event.name.contains("mob.enderdragon.wing")) {
+if (event.name.contains("mob.enderdragon.wing")) {
             String soundName = event.name;
             System.out.println("已经匹配到唱片机音符盒声音种类" + soundName);
 
-        }*/
-        /*if ("note.hat".equals(event.name)) {
-            WeaponCooldownHudEvent.isPlayingThrowingSound = true;
-        }*/
+        }
+        if ("note.hat".equals(event.name)) {
+            //WeaponCooldownHudEvent.isPlayingThrowingSound = true;
+        }
 
     }
 }

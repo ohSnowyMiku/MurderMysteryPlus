@@ -19,16 +19,29 @@ public class SimpleDelayedChatUtil {
 
     private static class Task{
         final String msg;
+        final ChatComponentText chatComponent;
         int tickLeft;
 
         Task(String msg) {
             this.msg = msg;
+            this.chatComponent = null;
             this.tickLeft = TICK_DELAY;
         }
+
+        Task(ChatComponentText chatComponent) {
+            this.msg = null;
+            this.chatComponent = chatComponent;
+            this.tickLeft = TICK_DELAY;
+        }
+
     }
 
     public static void scheduleMessage(String text) {
         pending.offer(new Task(text));
+    }
+
+    public static void scheduleMessage(ChatComponentText message) {
+        pending.offer(new Task(message));
     }
 
     @SubscribeEvent
@@ -36,7 +49,11 @@ public class SimpleDelayedChatUtil {
         if (event.phase != TickEvent.Phase.END || pending.isEmpty()) return;
         Task t = pending.peek();
         if (--t.tickLeft <= 0) {
-            mc.thePlayer.addChatMessage(new ChatComponentText(t.msg));
+            if (t.chatComponent != null) {
+                mc.thePlayer.addChatMessage(t.chatComponent);
+            } else {
+                mc.thePlayer.addChatMessage(new ChatComponentText(t.msg));
+            }
             pending.poll();
         }
     }
