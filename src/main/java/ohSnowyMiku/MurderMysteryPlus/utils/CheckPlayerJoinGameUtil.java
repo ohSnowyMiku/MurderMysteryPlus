@@ -6,10 +6,10 @@ import cc.polyfrost.oneconfig.events.event.TickEvent;
 import cc.polyfrost.oneconfig.libs.eventbus.Subscribe;
 import net.minecraft.network.play.server.S01PacketJoinGame;
 import ohSnowyMiku.MurderMysteryPlus.config.MurderMysteryPlusConfig;
-import ohSnowyMiku.MurderMysteryPlus.event.hud.title.titlehider.HiddenMurderTipTitleEvent;
-import ohSnowyMiku.MurderMysteryPlus.event.hud.mapeventhud.SecretPassageHudEvent;
 import ohSnowyMiku.MurderMysteryPlus.event.chat.RoleSender;
+import ohSnowyMiku.MurderMysteryPlus.event.hud.mapeventhud.SecretPassageHudEvent;
 import ohSnowyMiku.MurderMysteryPlus.event.hud.tablist.tablistrole.ChatPlayerRoleListener;
+import ohSnowyMiku.MurderMysteryPlus.event.hud.title.titlehider.HiddenMurderTipTitleEvent;
 
 import static ohSnowyMiku.MurderMysteryPlus.utils.CheckPlayerGameMapNameUtil.checkPlayerGameMapName;
 
@@ -26,13 +26,12 @@ public class CheckPlayerJoinGameUtil {
             ChatPlayerRoleListener.clearAll();
             HiddenMurderTipTitleEvent.shouldCancel = false;
             RoleSender.shouldCheckTitle = true;
-
             delayTicks = 60;
         }
     }
 
     @Subscribe
-    public void onTick(TickEvent event) {
+    public void onTick(TickEvent event) throws Exception {
         //System.out.println("开始执行tick逻辑");
         if (event.stage == Stage.END) { // 只在 tick 结束阶段执行一次
             if (delayTicks > 0) {
@@ -40,7 +39,7 @@ public class CheckPlayerJoinGameUtil {
                 delayTicks--;
                 if (delayTicks == 0) {
                     //System.out.println("计时结束");
-                    checkSecretPassageMap(); // 延迟结束后执行地图检测
+                    checkSecretPassageMap();// 延迟结束后执行地图检测
                 }
             }
         }
@@ -49,7 +48,7 @@ public class CheckPlayerJoinGameUtil {
     private void checkSecretPassageMap() {
         //System.out.println("地图检测方法开始执行");
 
-        if (!MurderMysteryPlusConfig.secretPassageOpenStatusSwitch) {
+        if (!MurderMysteryPlusConfig.showSecretPassageStatusSwitch) {
             return;
         }
 

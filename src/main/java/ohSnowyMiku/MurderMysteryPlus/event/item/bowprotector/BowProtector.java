@@ -31,7 +31,7 @@ public class BowProtector {
     @Subscribe
     public void onSendPacket(SendPacketEvent event) {
 
-        if (!MurderMysteryPlusConfig.bowProtectorSwitch) return;
+        if (!MurderMysteryPlusConfig.protectDetectiveBowSwitch) return;
 
         if (checkPlayerRole()) return;
 
@@ -46,7 +46,7 @@ public class BowProtector {
         /*Minecraft mc = Minecraft.getMinecraft();
         ItemStack held = mc.thePlayer.getCurrentEquippedItem();*/
 
-        //if (!MurderMysteryPlusConfig.bowProtectorSwitch) return;
+        //if (!MurderMysteryPlusConfig.protectDetectiveBowSwitch) return;
 
         //if (checkPlayerRole()) return;
 
@@ -68,7 +68,7 @@ public class BowProtector {
                 if (checkHeldItem()) {
                     //System.out.println("Entity已取消");
                     event.isCancelled = true;
-                    SimpleDelayedChatUtil.scheduleMessage("§d[MurderMysteryPlus] §a已自动保护侦探弓不被献祭(可在潜行状态强制献祭)");
+                    SimpleDelayedChatUtil.scheduleMessage("§d[MurderMysteryPlus] §aDetective bow has been automatically protected (can still sacrifice while sneaking)");
                 }
             }
         }
@@ -76,7 +76,7 @@ public class BowProtector {
 
 
     public void onRightClickBlock(SendPacketEvent event) {
-        //if (!MurderMysteryPlusConfig.bowProtectorSwitch) return;
+        //if (!MurderMysteryPlusConfig.protectDetectiveBowSwitch) return;
 
         //if (checkPlayerRole()) return;
 
@@ -94,7 +94,7 @@ public class BowProtector {
             if (block == Blocks.end_portal_frame && checkHeldItem()) {
                 //System.out.println("stand已取消");
                 event.isCancelled = true;
-                SimpleDelayedChatUtil.scheduleMessage("§d[MurderMysteryPlus] §a已自动保护侦探弓不被献祭(可在潜行状态强制献祭)");
+                SimpleDelayedChatUtil.scheduleMessage("§d[MurderMysteryPlus] §aDetective bow has been automatically protected (can still sacrifice while sneaking)");
             }
         }
     }

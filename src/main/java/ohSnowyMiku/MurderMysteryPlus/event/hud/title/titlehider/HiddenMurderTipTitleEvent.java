@@ -15,7 +15,7 @@ public class HiddenMurderTipTitleEvent {
     @Subscribe
     public void hiddenMurderTitleTip(ReceivePacketEvent event) {
 
-        if (!MurderMysteryPlusConfig.hiddenMurderTitleTipSwitch) {
+        if (!MurderMysteryPlusConfig.hideNoKillAlertTitleSwitch) {
             return;
         }
 

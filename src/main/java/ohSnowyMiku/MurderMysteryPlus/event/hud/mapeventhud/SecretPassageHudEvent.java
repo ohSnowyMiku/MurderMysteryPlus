@@ -17,7 +17,7 @@ public class SecretPassageHudEvent {
     @Subscribe
     public void onPacketReceive(ReceivePacketEvent event) {
 
-        if (!MurderMysteryPlusConfig.secretPassageOpenStatusSwitch) {
+        if (!MurderMysteryPlusConfig.showSecretPassageStatusSwitch) {
             return;
         }
 

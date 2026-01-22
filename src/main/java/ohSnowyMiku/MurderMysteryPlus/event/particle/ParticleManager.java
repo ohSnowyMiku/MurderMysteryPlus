@@ -4,7 +4,7 @@ import ohSnowyMiku.MurderMysteryPlus.config.MurderMysteryPlusConfig;
 import ohSnowyMiku.MurderMysteryPlus.utils.SimpleDelayedChatUtil;
 
 public class ParticleManager {
-    private static boolean onEnable;
+    private static boolean onEnable = true;
 
     public static boolean isParticlesEnabled() {
         return onEnable;
@@ -25,7 +25,7 @@ public class ParticleManager {
     }
 
     public static void toggleParticles() {
-        if (!MurderMysteryPlusConfig.disableParticlesSwitch) return;
+        if (!MurderMysteryPlusConfig.hideParticlesSwitch) return;
         toggleParticles(!onEnable);
     }
 }

@@ -18,7 +18,7 @@ public abstract class MixinEntityHorse {
         ItemStack held = player.getHeldItem();
         if (held != null && held.getItem() == Items.golden_carrot) {
 
-            if (!MurderMysteryPlusConfig.knifeProtectorSwitch) return;
+            if (!MurderMysteryPlusConfig.protectMurdererKnifeSwitch) return;
             if (!CheckPlayerGameTypeUtil.checkPlayerGameType()) return;
 
             // 阻止金胡萝卜对马生效

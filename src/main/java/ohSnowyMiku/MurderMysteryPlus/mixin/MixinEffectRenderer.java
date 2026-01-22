@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class MixinEffectRenderer {
     @Inject(method = "addEffect", at = @At("HEAD"), cancellable = true)
     private void onAddEffect(EntityFX effect, CallbackInfo ci) {
-        if (!MurderMysteryPlusConfig.disableParticlesSwitch) return;
+        if (!MurderMysteryPlusConfig.hideParticlesSwitch) return;
         if (ParticleManager.isParticlesEnabled()) return;
 
         if (effect instanceof EntityCrit2FX
@@ -30,7 +30,10 @@ public class MixinEffectRenderer {
                 || effect instanceof EntityFirework.StarterFX
                 || effect instanceof EntityFirework.OverlayFX
                 || effect instanceof MobAppearance
-                || effect instanceof EntityDiggingFX) {
+                || effect instanceof EntityDiggingFX
+                || effect instanceof EntityNoteFX
+                || effect instanceof EntityLavaFX
+                || effect instanceof EntityPortalFX) {
             ci.cancel();
         }
     }

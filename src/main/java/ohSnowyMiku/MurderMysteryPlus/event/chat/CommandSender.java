@@ -16,7 +16,7 @@ public class CommandSender {
     @SubscribeEvent
     public void sendClickableMessage(ClientChatReceivedEvent event) {
 
-        if (!MurderMysteryPlusConfig.partyCommandButtonSwitch) return;
+        if (!MurderMysteryPlusConfig.showPartyButtonsSwitch) return;
 
         //ChatUtil.printLastChat("party");
         //ChatUtil.printLastChat("Party");

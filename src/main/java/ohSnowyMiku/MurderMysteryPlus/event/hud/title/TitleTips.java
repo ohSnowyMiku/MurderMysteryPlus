@@ -7,18 +7,11 @@ import ohSnowyMiku.MurderMysteryPlus.config.MurderMysteryPlusConfig;
 import ohSnowyMiku.MurderMysteryPlus.event.sound.ChatPingHandler;
 
 public class TitleTips {
-    /*public static boolean showTitleTips = false;
-    @SubscribeEvent
-    public void onChatI(ClientChatReceivedEvent event) {
-        String formattedText = event.message.getFormattedText();
-        if (formattedText.contains("123")) {
-            showTitleTips = true;
-        }
-    }*/
+
     // 原版 title 风格参数（单位：tick）
-    private static final int FADE_IN = 10;   // 渐入
-    private static final int STAY = 60;      // 停留
-    private static final int FADE_OUT = 20;  // 渐出
+    private static final int FADE_IN = 5;   // 渐入
+    private static final int STAY = 50;      // 停留
+    private static final int FADE_OUT = 5;  // 渐出
 
     public static boolean active = false;
     private static int tickCounter = 0;
@@ -34,25 +27,25 @@ public class TitleTips {
     // 触发条件：聊天包含特定文字
     @SubscribeEvent
     public void onChatI(ClientChatReceivedEvent event) {
-        if (!MurderMysteryPlusConfig.showTitleTipsHudSwitch) return;
+        if (!MurderMysteryPlusConfig.showTitleTipsSwitch) return;
         String text = event.message.getFormattedText();
         String matchedMessage = ChatPingHandler.matchMessage(text);
         if (matchedMessage == null) return;
         switch (matchedMessage) {
             case "弓拿起":
-                if (!MurderMysteryPlusConfig.bowPickedTitleSwitch) return;
+                if (!MurderMysteryPlusConfig.showBowPickedTitleSwitch) return;
                 checkTitleText();
                 titleText = bowPickedTitleText;
                 TitleTips.start();
                 break;
             case "地图启用":
-                if (!MurderMysteryPlusConfig.mapEnabledTitleSwitch) return;
+                if (!MurderMysteryPlusConfig.showMapEnabledTitleSwitch) return;
                 checkTitleText();
                 titleText = mapEnableTitleText;
                 TitleTips.start();
                 break;
             case "最后幸存者":
-                if (!MurderMysteryPlusConfig.lastSurvivorTitleSwitch) return;
+                if (!MurderMysteryPlusConfig.showLastSurvivorTitleSwitch) return;
                 checkTitleText();
                 titleText = lastSurvivorTitleText;
                 TitleTips.start();
@@ -115,8 +108,8 @@ public class TitleTips {
     }
     public static void checkTitleText() {
 
-        if (MurderMysteryPlusConfig.titleTipsLanguageValue == 0) {
-            bowPickedTitleText = "You picked up a bow!";
+        if (MurderMysteryPlusConfig.titleLanguageValue == 0) {
+            bowPickedTitleText = "A player has picked up a Bow!";
             mapEnableTitleText = "The map is now enabled!";
             lastSurvivorTitleText = "You are the last survivor!";
             alphaAppearTitleText = "Alpha is now appearing!";
@@ -125,7 +118,6 @@ public class TitleTips {
         } else {
             bowPickedTitleText = "一位玩家拿起了弓！";
             mapEnableTitleText = "你的地图现在可以显示所有玩家！";
-            //lastSurvivorTitleText = "你感到肾上腺素在你的体内流淌";
             lastSurvivorTitleText = "最后一人！";
             alphaAppearTitleText = "母体已现形";
             infectedExposedTitleText = "感染者的位置暴露了！";

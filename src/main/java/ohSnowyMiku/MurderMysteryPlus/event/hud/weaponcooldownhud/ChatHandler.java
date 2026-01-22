@@ -18,7 +18,7 @@ public class ChatHandler {
     @SubscribeEvent
     public void onClientChat(ClientChatReceivedEvent event) {
         //System.out.println("[ChatHandler] 当前身份：" + playerRole);
-        if (playerRole == null || !MurderMysteryPlusConfig.showWeaponCooldownHudSwitch) {
+        if (playerRole == null || !MurderMysteryPlusConfig.showWeaponCooldownSwitch) {
             return;
         }
 

@@ -7,7 +7,7 @@ import ohSnowyMiku.MurderMysteryPlus.config.MurderMysteryPlusConfig;
 public class HiddenKaliSpamEvent {
     @SubscribeEvent
     public void hiddenKaliSpam(ClientChatReceivedEvent event) {
-        if (!MurderMysteryPlusConfig.hiddenKaliSpamMessage) {
+        if (!MurderMysteryPlusConfig.hideKaliSpamMessageSwitch) {
             return;
         }
         if (event.message.getFormattedText().contains("§r§e你在诅咒下被刷屏了§r")

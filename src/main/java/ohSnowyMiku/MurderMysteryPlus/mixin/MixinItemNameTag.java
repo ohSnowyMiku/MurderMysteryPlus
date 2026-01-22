@@ -23,7 +23,7 @@ public class MixinItemNameTag {
     private void disableNameTag(ItemStack stack, EntityPlayer player, EntityLivingBase target,
                                 CallbackInfoReturnable<Boolean> cir) {
 
-        if (!MurderMysteryPlusConfig.knifeProtectorSwitch) return;
+        if (!MurderMysteryPlusConfig.protectMurdererKnifeSwitch) return;
         if (!CheckPlayerGameTypeUtil.checkPlayerGameType()) return;
 
         cir.setReturnValue(false);

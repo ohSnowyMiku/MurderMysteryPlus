@@ -26,7 +26,7 @@ public class MixinItemBoat {
     private void noboat_place(ItemStack itemStackIn, World worldIn, EntityPlayer playerIn,
                               CallbackInfoReturnable<ItemStack> cir) {
 
-        if (!MurderMysteryPlusConfig.knifeProtectorSwitch) return;
+        if (!MurderMysteryPlusConfig.protectMurdererKnifeSwitch) return;
         if (!CheckPlayerGameTypeUtil.checkPlayerGameType()) return;
 
         cir.setReturnValue(itemStackIn);

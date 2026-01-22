@@ -23,7 +23,7 @@ public class AutoShowShotDistanceInChat {
         //ChatUtil.printLastChat("你只能");
         //ChatUtil.printLastChat("may");
 
-        if (!MurderMysteryPlusConfig.autoSendBowShotDistanceMessageSwitch) return;
+        if (!MurderMysteryPlusConfig.AutoSendBowKillDistanceSwitch) return;
 
         if (ChatUtil.containsInLastFormatted("§r§e你射到了距离你")
                 || ChatUtil.containsInLastFormatted("§r§eYou shot someone from")) {
@@ -46,7 +46,7 @@ public class AutoShowShotDistanceInChat {
         Minecraft mc = Minecraft.getMinecraft();
         String msg;
 
-        if (MurderMysteryPlusConfig.autoSendBowShotDistanceMessageLanguageValue == 0) {
+        if (MurderMysteryPlusConfig.bowDistanceLanguageValue == 0) {
 
             msg = "[MurderMysteryPlus] You shot someone from " + distance + " blocks away!";
         } else {

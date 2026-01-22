@@ -19,7 +19,7 @@ public class ScoreBarListener {
     public void checkScoreBarRole(TickEvent.ClientTickEvent event) {
         String detectedRole = null;
 
-        if (!CheckPlayerGameTypeUtil.checkPlayerGameType() || !MurderMysteryPlusConfig.showWeaponCooldownHudSwitch || event.phase != TickEvent.Phase.END)
+        if (!CheckPlayerGameTypeUtil.checkPlayerGameType() || !MurderMysteryPlusConfig.showWeaponCooldownSwitch || event.phase != TickEvent.Phase.END)
             return;
         //System.out.println("[ScoreBar] Tick END 触发");
 

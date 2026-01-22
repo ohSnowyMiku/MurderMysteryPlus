@@ -21,7 +21,7 @@ public class RoleSender {
     public void onPacketReceive(ReceivePacketEvent event) {
         if (!shouldCheckTitle) return;
 
-        if (!MurderMysteryPlusConfig.autoSendMyRoleInPartyChatSwitch) return;
+        if (!MurderMysteryPlusConfig.autoSendRoleToPartySwitch) return;
 
         if (!CheckPlayerGameTypeUtil.checkPlayerGameType()) return;
 
@@ -62,7 +62,7 @@ public class RoleSender {
         //System.out.println("当前不为12");
 
         String detectiveMsg, murdererMsg;
-        if (MurderMysteryPlusConfig.autoSendMyRoleInPartyChatLanguageValue == 0) {
+        if (MurderMysteryPlusConfig.roleMessageLanguageValue == 0) {
             //System.out.println("英文");
             detectiveMsg = "/pc [MurderMysteryPlus] My Role: Detective";
             murdererMsg = "/pc [MurderMysteryPlus] My Role: Murderer";

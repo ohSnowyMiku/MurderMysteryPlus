@@ -1,8 +1,8 @@
 package ohSnowyMiku.MurderMysteryPlus.command;
 
-import ohSnowyMiku.MurderMysteryPlus.MurderMysteryPlus;
 import cc.polyfrost.oneconfig.utils.commands.annotations.Command;
 import cc.polyfrost.oneconfig.utils.commands.annotations.Main;
+import ohSnowyMiku.MurderMysteryPlus.MurderMysteryPlus;
 
 /**
  * An example command implementing the Command api of OneConfig.

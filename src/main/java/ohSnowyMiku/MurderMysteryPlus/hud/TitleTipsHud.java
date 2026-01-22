@@ -26,11 +26,9 @@ public class TitleTipsHud extends BasicHud {
                 1f,
                 new OneColor(255, 255, 255));
     }
-
     @Override
     protected void draw(UMatrixStack matrices, float x, float y, float scale, boolean example) {
-        //String text = example ? "Bow Dropped" : "Bow Dropped!";
-        // 当前透明度（0.0~1.0）
+
         float alpha = example ? 1.0f : TitleTips.getCurrentAlpha();
         if (!example && alpha <= 0f) return;
 
@@ -88,21 +86,6 @@ public class TitleTipsHud extends BasicHud {
     protected float getHeight(float scale, boolean example) {
         return 10f;
     }
-    /*@Override
-    protected float getWidth(float scale, boolean example) {
-        String text = TitleTips.active ? TitleTips.titleText : EXAMPLE_TEXT;
-        if (text == null) return 0f;
-
-        net.minecraft.client.gui.FontRenderer fr = net.minecraft.client.Minecraft.getMinecraft().fontRendererObj;
-        return fr.getStringWidth(text) * scale;
-    }
-
-    @Override
-    protected float getHeight(float scale, boolean example) {
-        net.minecraft.client.gui.FontRenderer fr = net.minecraft.client.Minecraft.getMinecraft().fontRendererObj;
-        return fr.FONT_HEIGHT * scale;
-    }*/
-
 
     @Override
     protected boolean shouldDrawBackground() {

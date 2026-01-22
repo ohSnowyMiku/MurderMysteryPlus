@@ -40,7 +40,7 @@ public class ChatChannelSwap {
         ) {
             //System.out.println(inParty);
             inParty = true;
-            if (!MurderMysteryPlusConfig.chatChannelSwapSwitch) return;
+            if (!MurderMysteryPlusConfig.autoSwapChatChannelSwitch) return;
             mc.thePlayer.sendChatMessage("/chat p");
         }
     }
@@ -56,7 +56,7 @@ public class ChatChannelSwap {
                 || ChatUtil.containsInLastFormatted("§e解散了组队")) {
             //System.out.println(inParty);
             inParty = false;
-            if (!MurderMysteryPlusConfig.chatChannelSwapSwitch) return;
+            if (!MurderMysteryPlusConfig.autoSwapChatChannelSwitch) return;
             mc.thePlayer.sendChatMessage("/chat a");
         }
 

@@ -174,7 +174,7 @@ public class ArmorStandNameTagHider {
     @SubscribeEvent
     public void hideArmorStandNameTag(RenderLivingEvent.Specials.Pre<EntityArmorStand> event) {
 
-        if (!MurderMysteryPlusConfig.hideArmorStandNameTagSwitch) return;
+        if (!MurderMysteryPlusConfig.hideUselessArmorStandTagsSwitch) return;
 
         if (!CheckPlayerGameTypeUtil.checkPlayerGameType()) return;
 

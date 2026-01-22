@@ -31,7 +31,7 @@ public class ArmorStandParticle {
     }
 
     private boolean shouldProcessEvent(TickEvent.ClientTickEvent event) {
-        return MurderMysteryPlusConfig.showBowArmorStandParticleSwitch
+        return MurderMysteryPlusConfig.showBowDropParticlesSwitch
                 && event.phase == TickEvent.Phase.END
                 && mc.theWorld != null;
     }

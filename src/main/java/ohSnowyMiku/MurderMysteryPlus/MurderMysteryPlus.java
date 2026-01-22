@@ -24,8 +24,6 @@ import ohSnowyMiku.MurderMysteryPlus.event.item.gestureprotector.ArmorStandHandl
 import ohSnowyMiku.MurderMysteryPlus.event.item.invisiblebow.BowHideHandler;
 import ohSnowyMiku.MurderMysteryPlus.event.nametag.nametaghider.ArmorStandNameTagHider;
 import ohSnowyMiku.MurderMysteryPlus.event.particle.ArmorStandParticle;
-import ohSnowyMiku.MurderMysteryPlus.event.sound.SoundListener;
-import ohSnowyMiku.MurderMysteryPlus.mixin.MixinEffectRenderer;
 import ohSnowyMiku.MurderMysteryPlus.event.sound.ChatPingHandler;
 import ohSnowyMiku.MurderMysteryPlus.other.font.ChatFixHandler;
 import ohSnowyMiku.MurderMysteryPlus.other.resourcepack.hook;

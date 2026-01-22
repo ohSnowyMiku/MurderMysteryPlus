@@ -4,7 +4,6 @@ import net.minecraft.client.Minecraft;
 import net.minecraftforge.client.event.ClientChatReceivedEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import ohSnowyMiku.MurderMysteryPlus.config.MurderMysteryPlusConfig;
-import ohSnowyMiku.MurderMysteryPlus.utils.ChatUtil;
 
 public class ChatPingHandler {
     private final Minecraft mc = Minecraft.getMinecraft();
@@ -28,7 +27,7 @@ public class ChatPingHandler {
         ChatUtil.printLastChat("You");
         ChatUtil.printLastChat("alpha");*/
 
-        if (!MurderMysteryPlusConfig.chatPingSoundSwitch) return;
+        if (!MurderMysteryPlusConfig.enableSoundsSwitch) return;
 
         String message = event.message.getFormattedText();
         String matchedMessage = matchMessage(message);
@@ -48,15 +47,16 @@ public class ChatPingHandler {
             case "最后幸存者":
                 playSound(MurderMysteryPlusConfig.lastSurvivorSoundValue);
                 break;
+            case "母体现形":
+                playSound(MurderMysteryPlusConfig.alphaAppearsSoundValue);
+                break;
             /*case "揭露幸存者":
                 playSound(MurderMysteryPlusConfig.survivorRevealSoundValue);
                 break;
             case "母体感染者暴露":
                 playSound(MurderMysteryPlusConfig.infectedExposedSoundValue);
                 break;
-            case "母体现形":
-                playSound(MurderMysteryPlusConfig.alphaAppearsSoundValue);
-                break;*/
+            */
         }
 
         /*if (message.contains("弓已掉落！")) {
@@ -119,11 +119,14 @@ public class ChatPingHandler {
         if (message.contains("§r§6弓已掉落！") || message.contains("§r§6侦探已被杀死！")
                 || message.contains("§r§6The Detective has been killed!")
                 || message.contains("§r§6A Bow has been dropped!")
+                || message.contains("§r§6The Bow has been dropped!")
                 || message.contains("§r§6A Detective has been killed!")
-                || message.contains("§r§6一把弓已掉落！")) {
+                || message.contains("§r§6一把弓已掉落！")
+                || message.contains("§r§6The Detective has left!")
+                || message.contains("§r§6侦探退出了游戏！")) {
             return "弓掉落";
         }
-        if (message.contains("§r§e一位玩家拿起了弓！") || message.contains("§r§eA player has picked up the Bow!")) {
+        if (message.contains("一位玩家拿起了弓！") || message.contains("§r§eA player has picked up the Bow!")) {
             return "弓拿起";
         }
         if (message.contains("§r§e你的地图现在可以显示所有玩家！")
@@ -142,10 +145,10 @@ public class ChatPingHandler {
         if (message.contains("母体被暴露在小地图上")
                 || message.contains("§r§aThe alpha is now exposed on the minimap until they infect a survivor!")) {
             return "母体感染者暴露";
-        }
+        }*/
         if (message.contains("§r§e§l而现形！§r") || message.contains("§r§e§l, has been revealed by")) {
             return "母体现形";
-        }*/
+        }
         return null;
     }
 

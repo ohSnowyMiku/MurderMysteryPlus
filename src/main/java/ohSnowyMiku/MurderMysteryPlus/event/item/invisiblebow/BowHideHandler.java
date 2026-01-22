@@ -11,7 +11,7 @@ public class BowHideHandler {
 
     @SubscribeEvent
     public void onRenderHand(RenderHandEvent event) {
-        if (!MurderMysteryPlusConfig.hiddenPullingBowAnimationSwitch) {
+        if (!MurderMysteryPlusConfig.hideBowPullAnimationSwitch) {
             return;
         }
         Minecraft mc = Minecraft.getMinecraft();
