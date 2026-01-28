@@ -8,7 +8,6 @@ import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import ohSnowyMiku.MurderMysteryPlus.command.ExampleCommand;
-import ohSnowyMiku.MurderMysteryPlus.command.UpdateCommand;
 import ohSnowyMiku.MurderMysteryPlus.config.MurderMysteryPlusConfig;
 import ohSnowyMiku.MurderMysteryPlus.event.chat.*;
 import ohSnowyMiku.MurderMysteryPlus.event.hud.mapeventhud.SecretPassageHudEvent;
@@ -55,7 +54,7 @@ public class MurderMysteryPlus {
         config = new MurderMysteryPlusConfig();
 
         CommandManager.INSTANCE.registerCommand(new ExampleCommand());
-        CommandManager.INSTANCE.registerCommand(new UpdateCommand());
+        //CommandManager.INSTANCE.registerCommand(new UpdateCommand());
         //UpdateApplier.applyCachedUpdate();
 
         //EventManager.INSTANCE.register(new SecretPassageHudEvent());
