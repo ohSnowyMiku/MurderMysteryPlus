@@ -10,6 +10,7 @@ import ohSnowyMiku.MurderMysteryPlus.event.chat.RoleSender;
 import ohSnowyMiku.MurderMysteryPlus.event.hud.mapeventhud.SecretPassageHudEvent;
 import ohSnowyMiku.MurderMysteryPlus.event.hud.tablist.tablistrole.ChatPlayerRoleListener;
 import ohSnowyMiku.MurderMysteryPlus.event.hud.title.titlehider.HiddenMurderTipTitleEvent;
+import ohSnowyMiku.MurderMysteryPlus.event.sound.ChatPingHandler;
 
 import static ohSnowyMiku.MurderMysteryPlus.utils.CheckPlayerGameMapNameUtil.checkPlayerGameMapName;
 
@@ -26,6 +27,7 @@ public class CheckPlayerJoinGameUtil {
             ChatPlayerRoleListener.clearAll();
             HiddenMurderTipTitleEvent.shouldCancel = false;
             RoleSender.shouldCheckTitle = true;
+            ChatPingHandler.shouldPlaySound = true;
             delayTicks = 60;
         }
     }

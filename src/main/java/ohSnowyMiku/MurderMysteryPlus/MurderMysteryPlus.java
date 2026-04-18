@@ -24,7 +24,7 @@ import ohSnowyMiku.MurderMysteryPlus.event.item.invisiblebow.BowHideHandler;
 import ohSnowyMiku.MurderMysteryPlus.event.nametag.nametaghider.ArmorStandNameTagHider;
 import ohSnowyMiku.MurderMysteryPlus.event.particle.ArmorStandParticle;
 import ohSnowyMiku.MurderMysteryPlus.event.sound.ChatPingHandler;
-import ohSnowyMiku.MurderMysteryPlus.other.font.ChatFixHandler;
+import ohSnowyMiku.MurderMysteryPlus.event.sound.SoundListener;
 import ohSnowyMiku.MurderMysteryPlus.other.resourcepack.hook;
 import ohSnowyMiku.MurderMysteryPlus.utils.ChatUtil;
 import ohSnowyMiku.MurderMysteryPlus.utils.CheckPlayerJoinGameUtil;
@@ -80,7 +80,7 @@ public class MurderMysteryPlus {
         MinecraftForge.EVENT_BUS.register(new ChatPlayerRoleListener());
         MinecraftForge.EVENT_BUS.register(new SimpleDelayedChatUtil());
         MinecraftForge.EVENT_BUS.register(new ArmorStandNameTagHider());
-        MinecraftForge.EVENT_BUS.register(new ChatFixHandler());
+        //MinecraftForge.EVENT_BUS.register(new ChatFixHandler());
         MinecraftForge.EVENT_BUS.register(new ChatChannelSwap());
         MinecraftForge.EVENT_BUS.register(new AutoShowShotDistanceInChat());
         //MinecraftForge.EVENT_BUS.register(new UpdateEventHandler());

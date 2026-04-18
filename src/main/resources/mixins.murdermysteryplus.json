@@ -7,14 +7,15 @@
     "maxShiftBy": 5
   },
   "client": [
+    "FontRendererMixin",
     "RenderEntityItemMixin_GoldIngotOverlay"
   ],
   "verbose": true,
   "mixins": [
+    "MixinEffectRenderer",
     "MixinEntityHorse",
     "MixinItemBoat",
     "MixinItemNameTag",
-    "MixinScoreboard",
-    "MixinEffectRenderer"
+    "MixinScoreboard"
   ]
 }

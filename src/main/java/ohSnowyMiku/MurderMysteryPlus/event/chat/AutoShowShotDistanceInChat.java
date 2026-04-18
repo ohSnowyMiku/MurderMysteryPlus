@@ -7,6 +7,7 @@ import net.minecraftforge.client.event.ClientChatReceivedEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import ohSnowyMiku.MurderMysteryPlus.config.MurderMysteryPlusConfig;
 import ohSnowyMiku.MurderMysteryPlus.utils.ChatUtil;
+import ohSnowyMiku.MurderMysteryPlus.utils.CheckPlayerGameTypeUtil;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -28,6 +29,10 @@ public class AutoShowShotDistanceInChat {
         if (ChatUtil.containsInLastFormatted("§r§e你射到了距离你")
                 || ChatUtil.containsInLastFormatted("§r§eYou shot someone from")) {
 
+            if (CheckPlayerGameTypeUtil.checkPlayerGameMode("MURDER_INFECTION")
+                    && MurderMysteryPlusConfig.disableInInfectionModeSwitch) {
+                return;
+            }
 
             String message = event.message.getFormattedText();
 

@@ -6,6 +6,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import ohSnowyMiku.MurderMysteryPlus.config.MurderMysteryPlusConfig;
 
 public class ChatPingHandler {
+    public static boolean shouldPlaySound;
     private final Minecraft mc = Minecraft.getMinecraft();
 
     @SubscribeEvent
@@ -42,7 +43,9 @@ public class ChatPingHandler {
                 playSound(MurderMysteryPlusConfig.bowPickedSoundValue);
                 break;
             case "地图启用":
+                if (!shouldPlaySound) return;
                 playSound(MurderMysteryPlusConfig.mapEnabledSoundValue);
+                shouldPlaySound = false;
                 break;
             case "最后幸存者":
                 playSound(MurderMysteryPlusConfig.lastSurvivorSoundValue);
@@ -126,7 +129,8 @@ public class ChatPingHandler {
                 || message.contains("§r§6侦探退出了游戏！")) {
             return "弓掉落";
         }
-        if (message.contains("一位玩家拿起了弓！") || message.contains("§r§eA player has picked up the Bow!")) {
+        if (message.contains("一位玩家拿起了弓！") || message.contains("§r§eA player has picked up the Bow!")
+        || message.contains("§r§eA player has picked up a Bow!")) {
             return "弓拿起";
         }
         if (message.contains("§r§e你的地图现在可以显示所有玩家！")
@@ -134,9 +138,11 @@ public class ChatPingHandler {
                 || message.contains("§r§eYour Map now shows all players!")
                 || message.contains("§r§cAll players are now shown on the minimap")
         ) {
+            //shouldPlaySound = false;
             return "地图启用";
         }
-        if (message.contains("§r§a你感受到肾上腺素在你体内燃烧") || message.contains("§r§aYou feel a rush of adrenaline,")) {
+        if (message.contains("§r§a你感受到肾上腺素在你体内燃烧")
+                || message.contains("§r§aYou feel a rush of adrenaline,")) {
             return "最后幸存者";
         }
         /*if (message.contains("§r§a§l幸存者位置§r§e已显示！") || message.contains("§r§a§lSurvivors §r§ehave been revealed!")) {

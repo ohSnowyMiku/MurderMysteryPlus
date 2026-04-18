@@ -184,15 +184,21 @@ public class ArmorStandNameTagHider {
         if (stand.hasCustomName()) {
             String name = stand.getCustomNameTag();
 
+            if(hideLastWordsNameTag(name)) {
+                event.setCanceled(true);
+            }
+
             if (checkArmorStandNameTag(name) == 0) return;
 
-            if (name.contains("临终遗言") || name.contains("Last Words")) return;
+            //if (name.contains("临终遗言") || name.contains("Last Words")) return;
+
+
 
             if (checkArmorStandNameTag(name) == 1) {
                 event.setCanceled(true); // 取消默认的 nametag 渲染
             }
             if (checkArmorStandNameTag(name) == 2) {
-                hideBehindBlock(event,stand);
+                hideBehindBlock(event, stand);
             }
         }
     }
@@ -229,4 +235,11 @@ public class ArmorStandNameTagHider {
             e.setCanceled(true);
         }
     }
+    private boolean hideLastWordsNameTag(String name) {
+        if(CheckPlayerGameTypeUtil.checkPlayerGameMode("MURDER_INFECTION") && MurderMysteryPlusConfig.hideLastWordsInInfectionSwitch) {
+            return name.contains("临终遗言") || name.contains("Last Words")
+                    || name.contains("\"");
+        }return false;
+    }
 }
+//TODO 测试遗言nametag

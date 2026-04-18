@@ -37,10 +37,16 @@ public class MurderMysteryPlusConfig extends Config {
 //隐藏地图中大部分隐形盔甲架的nametag
     @Switch(
             name = "Hide Useless Armor Stand Tags",
-            size = OptionSize.DUAL,
             description = "Hide useless name tags of invisible armor stands on the map"
     )
     public static boolean hideUselessArmorStandTagsSwitch = false;
+
+    @Checkbox(
+            name = "Hide Last Words in Infection"
+    )
+    public static boolean hideLastWordsInInfectionSwitch = false;
+
+
 //隐藏大部分粒子
     @Switch(
             name = "Hide Particles",
@@ -82,12 +88,19 @@ public class MurderMysteryPlusConfig extends Config {
 //自动发送弓远距离击杀信息
     @Switch(
             name = "Auto Send Bow Kill Distance",
-            size = OptionSize.DUAL,
             category = "Chat",
             subcategory = "Distance Messages",
             description = "Automatically send bow kill distance messages"
     )
     public static boolean AutoSendBowKillDistanceSwitch = false;
+
+    @Checkbox(
+            name = "Disable in Infection Mode",
+            category = "Chat",
+            subcategory = "Distance Messages",
+            description = "It will not be enabled in infection mode"
+    )
+    public static boolean disableInInfectionModeSwitch = false;
 
 
     @Dropdown(
@@ -368,6 +381,7 @@ public class MurderMysteryPlusConfig extends Config {
         addDependency("sendToPublic", "AutoSendBowKillDistanceSwitch");
         addDependency("sendToParty", "AutoSendBowKillDistanceSwitch");
         addDependency("sendToGuild", "AutoSendBowKillDistanceSwitch");
+        addDependency("disableInInfectionModeSwitch", "AutoSendBowKillDistanceSwitch");
         addDependency("bowDistanceLanguageValue", "AutoSendBowKillDistanceSwitch");
         addDependency("toggleParticles", "hideParticlesSwitch");
         addDependency("titleLanguageValue", "showTitleTipsSwitch");
@@ -380,6 +394,7 @@ public class MurderMysteryPlusConfig extends Config {
         addDependency("mapEnabledSoundValue", "enableSoundsSwitch");
         addDependency("alphaAppearsSoundValue", "enableSoundsSwitch");
         addDependency("roleMessageLanguageValue", "autoSendRoleToPartySwitch");
+        addDependency("hideLastWordsInInfectionSwitch", "hideUselessArmorStandTagsSwitch");
     }
 
     public static class MyPage {
