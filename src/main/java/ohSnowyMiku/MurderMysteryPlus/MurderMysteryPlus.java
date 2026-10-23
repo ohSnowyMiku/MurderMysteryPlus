@@ -4,7 +4,6 @@ import cc.polyfrost.oneconfig.events.EventManager;
 import cc.polyfrost.oneconfig.events.event.InitializationEvent;
 import cc.polyfrost.oneconfig.utils.commands.CommandManager;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import ohSnowyMiku.MurderMysteryPlus.command.ExampleCommand;
@@ -25,7 +24,6 @@ import ohSnowyMiku.MurderMysteryPlus.event.nametag.nametaghider.ArmorStandNameTa
 import ohSnowyMiku.MurderMysteryPlus.event.particle.ArmorStandParticle;
 import ohSnowyMiku.MurderMysteryPlus.event.sound.ChatPingHandler;
 import ohSnowyMiku.MurderMysteryPlus.event.sound.SoundListener;
-import ohSnowyMiku.MurderMysteryPlus.other.resourcepack.hook;
 import ohSnowyMiku.MurderMysteryPlus.utils.ChatUtil;
 import ohSnowyMiku.MurderMysteryPlus.utils.CheckPlayerJoinGameUtil;
 import ohSnowyMiku.MurderMysteryPlus.utils.SimpleDelayedChatUtil;
@@ -96,9 +94,5 @@ public class MurderMysteryPlus {
         //MinecraftForge.EVENT_BUS.register(new CheckPlayerJoinWorldUtil());
         //MinecraftForge.EVENT_BUS.register(new BetterNametag());
         TickDelayUtil.init();
-        if (FMLCommonHandler.instance().getSide().isClient()) {
-            // 保证在客户端主线程、资源仓库准备好之后执行
-            net.minecraft.client.Minecraft.getMinecraft().addScheduledTask(hook::applyOnce);
-        }
     }
 }
